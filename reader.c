@@ -5,7 +5,7 @@
 #include "variablen.h"
 #include "proto.h"
 
-
+extern char* lpath;
 int load_snapshot(int kk)
 {
   FILE *fd;
@@ -19,9 +19,9 @@ int load_snapshot(int kk)
 
   for(i=0, pc=1; i<files; i++, pc=pc_new)
     {
-      if (kk < 10) sprintf(buf, "snapshot_00%i", kk);
-      if (kk > 9 && kk < 100) sprintf(buf, "snapshot_0%i", kk);
-      if (kk > 99) sprintf(buf, "snapshot_%i", kk);
+      if (kk < 10) sprintf(buf, "%ssnapshot_00%i",lpath, kk);
+      if (kk > 9 && kk < 100) sprintf(buf, "%ssnapshot_0%i",lpath, kk);
+      if (kk > 99) sprintf(buf, "%ssnapshot_%i",lpath, kk);
 
       if(!(fd=fopen(buf,"r")))
     {

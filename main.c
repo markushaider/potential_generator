@@ -7,15 +7,17 @@
 #include "variablen.h"
 #include "proto.h"
 
+char *lpath, *spath;
 
-int main(void)
+int main(int argc, char** argv)
 {
   N22 = (2*ZA)*(2*ZA)*(2*ZA);
   N = (ZA)*(ZA)*(ZA);     /*sizes of the arrays*/
   TotNumPart=128*128*128;
    
   int n, otto, erwin, ii;
-  
+  lpath=argv[1];
+  spath=argv[2];
  
    for (ii=0; ii < 200; ii++ )
    {

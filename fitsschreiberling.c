@@ -5,6 +5,7 @@
 #include "variablen.h"
 #include "proto.h"
 
+extern char* spath;
 
 void speicher_pot_fits(int erwin, int n)
 {
@@ -15,7 +16,7 @@ void speicher_pot_fits(int erwin, int n)
    int nx=ZA, ny=ZA, nz=ZA;
    
      
-   sprintf(filename1, "phi_level_%i_time_%i.bin", n, erwin);
+   sprintf(filename1, "%sphi_level_%i_time_%i.bin", spath, n, erwin);
     
    fp=fopen(filename1, "w");
 
